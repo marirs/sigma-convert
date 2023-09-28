@@ -26,7 +26,7 @@ cp target/x86_64-pc-windows-gnu/release/sigmac_api_server.exe dist/sigmac_api_se
 cp target/aarch64-apple-darwin/release/sigmac dist/sigmac_macos_aarch64
 cp target/aarch64-apple-darwin/release/sigmac_api_server dist/sigmac_api_server_macos_aarch64
 cp target/x86_64-apple-darwin/release/sigmac dist/sigmac_macos_x86-64
-cp target/x86_64-apple-darwin/release/sigmacsigmac_api_server dist/sigmacsigmac_api_server_macos_x86-64
+cp target/x86_64-apple-darwin/release/sigmac_api_server dist/sigmac_api_server_macos_x86-64
 # linux
 cp target/aarch64-unknown-linux-gnu/release/sigmac dist/sigmac_linux_aarch64
 cp target/aarch64-unknown-linux-gnu/release/sigmac_api_server dist/sigmac_api_server_linux_aarch64
