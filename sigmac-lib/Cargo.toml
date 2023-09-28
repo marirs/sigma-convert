@@ -1,0 +1,40 @@
+[package]
+name="sigma_convert"
+description="Sigma Convert Library to convert Sigma rules into query languages."
+version = "2.0.1"
+authors = ["Sriram <marirs@gmail.com>"]
+keywords = ["sigma", "arcsight", "elastalert", "ml"]
+edition = "2021"
+
+[dependencies]
+thiserror = "1"
+ipnet = "2.8.0"
+regex = "1.9.1"
+serde = { version="1", features=["derive"]}
+serde_yaml = "0.9.22"
+uuid = "1.4.0"
+serde_json = "1"
+crossbeam-channel = { version = "0.5" }
+chrono = "0.4"
+dyn-clone = "1.0"
+tokio = {version = "1.29.1", features = ["full"]}
+log = "0.4.19"
+simple_logger = "4.2.0"
+
+[dev-dependencies]
+async-std = { version = "1", features = ["attributes"] }
+serde_yaml = "0"
+
+[lib]
+name = "sigma_convert"
+path = "src/lib.rs"
+
+[profile.dev]
+opt-level = 3
+
+[profile.release]
+codegen-units = 1
+debug-assertions = false
+debug = false
+opt-level = 3
+lto = true

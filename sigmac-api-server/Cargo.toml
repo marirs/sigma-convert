@@ -1,0 +1,32 @@
+[package]
+name="sigma_api_server"
+description="Sigma Convert API Server to convert sigma rules to different query languages using web."
+version = "2.0.1"
+authors = ["Sriram <marirs@gmail.com>"]
+keywords = ["sigma", "arcsight", "elastalert", "ml"]
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.3", features = ["derive", "cargo"] }
+config = "0.13.3"
+openssl = { version = "0.10.55", features = ["vendored"] }
+rocket = { version = "0.5.0-rc.3", features = ["tls", "json", "secrets"] }
+rocket_okapi = { version = "0.8.0-rc.3", features = ["rapidoc"] }
+schemars = "0.8.12"
+serde = { version = "1", features = ["derive"] }
+sigma_convert = { path = "../sigmac-lib" }
+thiserror = "1"
+
+[[bin]]
+name = "sigmac_api_server"
+path = "src/main.rs"
+
+[profile.dev]
+opt-level = 3
+
+[profile.release]
+codegen-units = 1
+debug-assertions = false
+debug = false
+opt-level = 3
+lto = true

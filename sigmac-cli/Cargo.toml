@@ -1,0 +1,26 @@
+[package]
+name="sigmac_cli"
+description="This is the Sigma command line interface to convert Sigma rules into query languages."
+version = "1.0.1"
+authors = ["Sriram <marirs@gmail.com>"]
+keywords = ["sigma", "arcsight", "elastalert", "ml"]
+edition = "2021"
+
+[dependencies]
+thiserror = "1"
+clap = { version="4.3", features = ["derive"] }
+sigma_convert = { path = "../sigmac-lib" }
+
+[[bin]]
+name="sigmac"
+path="src/main.rs"
+
+[profile.dev]
+opt-level = 3
+
+[profile.release]
+codegen-units = 1
+debug-assertions = false
+debug = false
+opt-level = 3
+lto = true

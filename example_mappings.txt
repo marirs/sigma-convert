@@ -1,0 +1,51 @@
+parentCommandLine: parentcommandline,process.parent.command_line.text,ParentCommandLine,process.parent.command_line
+commandLine: commandline,process.command_line.text, CommandLine
+eventID: EventID,event.code, winlog.event_data.EventID
+channel: Channel,winlog.channel
+signature: Provider_Name,winlog.provider_name
+computerName: ComputerName,winlog.computer_name
+filePath: FileName,file.path, TargetFilename, process.executable.text, ScriptName
+winSystemProcessGuid: ProcessGuid,process.entity_id
+winSystemProcessId: ProcessId,process.pid
+fileName: Image,process.executable, SourceImage,process.executable, PipeName,file.name, SourceImage, Destination, Application, ProcessName
+currentDirectory: CurrentDirectory,process.working_directory
+winSystemParentProcessGuid: ParentProcessGuid,process.parent.entity_id
+winSystemParentProcessId: ParentProcessId,process.parent.pid
+parentFileName: ParentImage,process.parent.executable
+sourceAddress: SourceIp,source.ip, ClientAddress, IpAddress
+sourceHost: SourceHostname,source.domain, ClientName, WorkstationName
+sourcePort: SourcePort,source.port, IpPort
+destinationAddress: DestinationIp,destination.ip, DestAddress
+destinationHost: DestinationHostname,destination.domain, DestName
+destinationPort: DestinationPort,destination.port, DestPort
+transportProtocol: DestinationPortName,network.protocol
+sourceProcessGuid: SourceProcessGuid,process.entity_id
+sourceProcessId: SourceProcessId,process.pid
+sourceThreadId: SourceThreadId,process.thread.id
+targetObject: TargetObject,registry.path
+dns: QueryName,dns.question.name
+dnsQueryStatus: QueryStatus,sysmon.dns.status
+isExecutable: IsExecutable,sysmon.file.is_executable
+fileArchived: Archived,sysmon.file.archived
+commandExecuted: CommandName,powershell.command.name
+commandExecutedPath: CommandPath,powershell.command.path
+commandType: CommandType,powershell.command.type
+hostApplication: HostApplication,process.command_line
+hostId: HostId,process.entity_id
+hostName: HostName,process.title
+powershellEngineState: NewEngineState,powershell.engine.new_state
+powershellPipelineId: PipelineId,powershell.pipeline_id
+powershellPreviousEngineState: PreviousEngineState,powershell.engine.previous_state
+powershellRunspaceId: RunspaceId,powershell.runspace_id
+externalId: SequenceNumber,event.sequence
+powershellProviderNewState: NewProviderState,powershell.provider.new_state
+powershellProviderName: ProviderName,powershell.provider.name
+powershellSequence: MessageNumber,powershell.sequence
+powershellTotal: MessageTotal,powershell.total
+powershellScriptBlockText: ScriptBlockText,powershell.file.script_block_text
+powershellScriptBlockId: ScriptBlockId,powershell.file.script_block_id
+winSystemAccountDomain: AccountDomain,user.domain, TargetDomainName
+winSystemAccountName: AccountName,user.name
+winProcessId: NewProcessId,process.pid
+deviceProcessName: NewProcessName,process.executable
+parentProcessName: ParentProcessName,process.parent.name

@@ -1,0 +1,20 @@
+# /etc/systemd/system/sigmac_api.service
+
+[Unit]
+Description=Sigma Convert API Server
+After=network.target
+
+[Service]
+PIDFile=/run/sigmac_api.pid
+User=root
+Group=www-data
+WorkingDirectory=/opt/sigmac_api
+ExecStart=/opt/sigmac_api/sigmac_api_server runserver -f /opt/sigmac_api/config.yml
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+# 'on-failure' or 'always'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

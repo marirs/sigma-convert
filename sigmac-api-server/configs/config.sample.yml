@@ -1,0 +1,24 @@
+---
+# api server configuration
+server:
+  # api server listening ip
+  host: 127.0.0.1
+  # api server listening port
+  port: 8001
+  # keep-alive timeout to timeout seconds.
+  # If timeout is 0, keep-alive is disabled.
+  keep_alive: 60
+  # in bytes from an incoming form request will be read
+  forms_limit: 262144
+  # in bytes from an incoming json request will be read
+  json_limit: 1048576
+  # Sets the secret_key
+  secret_key: 8Xui8SN4mI+7egV/9dlfYYLGQJeEx4+DwmSQLwDVXJg=
+ssl:
+  # if true starts the server using ssl config
+  enabled: no
+  # if true generates the self signed ssl certificate
+  generate_self_signed: yes
+#  If generate_self_signed is `NO`; enable the below 2 keys & specify the path
+#  key_file: key.pem
+#  cert_file: cert.pem
