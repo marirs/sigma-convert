@@ -1,3 +1,5 @@
+#![allow(clippy::enum_variant_names)]
+
 use std::io;
 use thiserror::Error;
 
