@@ -75,6 +75,21 @@ Output File: "~/Documents/output/elastalert_T1089- Defense evasion  - Disabling 
 $ ./sigmac --dest-type elastalert --file-source ../sigmarules/T1089-\ Defense\ evasion\ \ -\ Disabling\ Security\ Tools.yml --keep-fields name,tags,impact
 ```
 
+- Convert a simple Sigma Rule to ElastAlert and change/replace field values
+```bash
+$ ./sigmac --source-type sigma --dest-type elastalert --file-source ../sigmarules/T1089-\ Defense\ evasion\ \ -\ Disabling\ Security\ Tools.yml --replace-fields "index: newindex*"
+```
+
+- Convert a simple Sigma Rule to ElastAlert and add new fields
+```bash
+$ ./sigmac --dest-type elastalert --file-source ../sigmarules/T1089-\ Defense\ evasion\ \ -\ Disabling\ Security\ Tools.yml --add-fields "xyz=new_field1, abc=new_field2"
+```
+
+- Convert a simple Sigma Rule to ElastAlert and add new alerting other than debug
+```bash
+$ ./sigmac --dest-type elastalert --file-source ../sigmarules/T1089-\ Defense\ evasion\ \ -\ Disabling\ Security\ Tools.yml --add-alerting "Some.New.Alerting"
+```
+
 - Convert a simple Sigma Rule to a destination along with Field Mapping file.
 <i><b>Use-case Scenario</b>:</i> Typically, Sigma Rule YML Files are defaulted with assumed keys.
 Here you can pass a field mapping file so that you can replace the default keys to match the keys for your environment.
