@@ -17,7 +17,7 @@ impl Component for NavBar {
     type Message = NavBarMsg;
     type Properties = ();
 
-    fn create(ctx: &Context<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         Self {
             scrollable_dialog_link: Default::default(),
         }

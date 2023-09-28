@@ -5,6 +5,7 @@ members = [
     "sigmac-api-server",
     "sigmac_frontend"
 ]
+resolver = "2"
 
 [profile.dev]
 opt-level = 3

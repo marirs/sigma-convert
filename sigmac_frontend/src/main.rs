@@ -2,7 +2,7 @@ use crate::components::{About, Footer, NavBar, RuleOutput, RulesInput};
 use crate::error::Result;
 use crate::models::{SigmaRuleData, SingleConvertResponse};
 use crate::service::{batch_convert, single_convert};
-use material_yew::{MatButton, MatIconButton, MatSnackbar, WeakComponentLink};
+use material_yew::{MatIconButton, MatSnackbar, WeakComponentLink};
 use yew::prelude::*;
 
 mod components;
@@ -51,7 +51,7 @@ impl Component for App {
             }
             AppMsg::BatchConverted(outputs) => {
                 match outputs {
-                    Ok(mut outputs) => {
+                    Ok(outputs) => {
                         self.outputs.append(
                             &mut outputs
                                 .into_iter()

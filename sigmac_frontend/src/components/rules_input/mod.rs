@@ -13,8 +13,8 @@ use yew::html::TargetCast;
 use yew::{html, Callback, Component, Context, Html};
 
 struct FileDetails {
-    name: String,
-    file_type: String,
+    _name: String,
+    _file_type: String,
     data: Vec<u8>,
 }
 
@@ -54,8 +54,8 @@ impl Component for RulesInput {
                 if file_type.eq("application/x-yaml") {
                     self.files.push(FileDetails {
                         data,
-                        file_type,
-                        name: file_name.clone(),
+                        _file_type: file_type,
+                        _name: file_name.clone(),
                     });
                     let link = ctx.link().clone();
                     let rules_text = self
