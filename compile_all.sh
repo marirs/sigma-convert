@@ -3,7 +3,7 @@
 CURRENT_VER=$(head Cargo.toml | grep version | cut -f2 -d'=' | cut -f2 -d\")
 
 # apple silicon binary
-cargo b --release--target aarch64-apple-darwin
+cargo b --release --target aarch64-apple-darwin
 # apple intel binary
 cargo b --release --target x86_64-apple-darwin
 # windows binary intel 64bit
