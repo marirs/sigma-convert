@@ -45,7 +45,7 @@ fn parse_settings_from_cli() -> Result<Settings> {
         if Path::new(cfg_file).exists() {
             // load settings from the config file or return error
             // if error in loading the given config file
-            Settings::from_file(&cfg_file)
+            Settings::from_file(cfg_file)
         } else {
             // config file does not exist, quit app
             Err(Error::ConfigFileNotFound)
