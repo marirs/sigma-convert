@@ -1,4 +1,4 @@
-#![allow(dead_code)]
+#![allow(dead_code, clippy::enum_variant_names)]
 use std::result;
 
 pub type Result<T> = result::Result<T, Error>;
