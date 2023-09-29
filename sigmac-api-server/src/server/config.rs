@@ -9,6 +9,7 @@ const SRV_KEEP_ALIVE: usize = 60;
 const SRV_FORMS_LIMIT: usize = 1024 * 256;
 const SRV_JSON_LIMIT: usize = 1024 * 256;
 const SRV_SECRET_KEY: &str = "t/xZkYvxfC8CSfTSH9ANiIR9t1SvLHqOYZ7vH4fp11s=";
+const SRV_STATIC: &str = "./dist";
 
 const SSL_ENABLED: bool = false;
 const SSL_GENERATE_SELF_SIGNED: bool = true;
@@ -70,6 +71,9 @@ pub struct ServerConfig {
     /// Api Server Secret key
     #[serde(default = "default_server_secret_key")]
     pub secret_key: String,
+    /// Static folder to serve static content
+    #[serde(default = "default_server_static_folder")]
+    pub static_folder: String,
 }
 
 impl Default for ServerConfig {
@@ -81,6 +85,7 @@ impl Default for ServerConfig {
             forms_limit: SRV_FORMS_LIMIT,
             json_limit: SRV_JSON_LIMIT,
             secret_key: SRV_SECRET_KEY.into(),
+            static_folder: SRV_STATIC.into(),
         }
     }
 }
@@ -144,6 +149,8 @@ fn default_server_json_limit() -> usize {
 fn default_server_secret_key() -> String {
     SRV_SECRET_KEY.into()
 }
+
+fn default_server_static_folder() -> String { SRV_STATIC.into() }
 
 // All SSL config defaults
 fn default_ssl_enabled() -> bool {
