@@ -1,7 +1,7 @@
 [package]
 name="sigma_api_server"
 description="Sigma Convert API Server to convert sigma rules to different query languages using web."
-version = "2.0.1"
+version = "2.0.2"
 authors = ["Sriram <marirs@gmail.com>"]
 keywords = ["sigma", "arcsight", "elastalert", "ml"]
 edition = "2021"
