@@ -105,3 +105,6 @@ $ ./sigmac --source-type sigma --dest-type elastalert --dir-source ../sigmarules
 
 ### Authors
 Sriram <marirs@gmail.com>
+
+### License
+- MIT
