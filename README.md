@@ -5,6 +5,10 @@ This project draws inspiration from SigmaHQ for the opensource Sigma Rules.
 a single sigma rule file or a folder of sigma rule files. There is also an API Server available,
 so you can run an API Server to do conversions using Microservices.
 
+### Test it
+Convertor: [https://www.sigmac.to](https://www.sigmac.to)  
+API Docs: [https://www.sigmac.to/docs](https://www.sigmac.to)
+
 ### Supported Conversions.
 The currently supported backends are:
    - ElastAlert
