@@ -16,7 +16,7 @@ pub enum Error {
     SigmaRegularExpressionError(String),
     #[error("Sigma rule identifier must be an UUID")]
     SigmaIdentifierError,
-    #[error("Serde Error: {0}")]
+    #[error("{0}")]
     SerdeError(serde_yaml::Error),
     #[error("Could not convert into the specified target ({0}), since it is not supported.")]
     InvalidDestination(String),

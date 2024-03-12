@@ -1,6 +1,6 @@
 use crate::{controllers, error::Error, Result};
 use clap::Parser;
-use rocket::fs::FileServer;
+use rocket::fs::{FileServer, relative};
 use rocket::{data::Limits, Build, Config, Rocket};
 use rocket_okapi::{
     openapi_get_routes,
@@ -160,7 +160,8 @@ pub async fn init_server() -> Result<Rocket<Build>> {
         ],
     );
     // Mount the static files.
-    let app = app.mount("/", FileServer::from(server_settings.static_folder));
+    // let app = app.mount("/", FileServer::from(server_settings.static_folder));
+    let app = app.mount("/", FileServer::from(relative!("dist")));
 
     // Return the configured Rocket App
     Ok(app)

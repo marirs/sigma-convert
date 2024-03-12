@@ -34,7 +34,7 @@ pub struct SigmaRule {
     /// - id: 929a690e-bef0-4204-a928-ef5e620d6fcc
     ///   type: obsoletes
     /// ```
-    ///Currently the following types are defined:
+    /// Currently the following types are defined:
     /// - derived: Rule was derived from the referred rule or rules, which may remain active.
     /// - obsoletes: Rule obsoletes the referred rule or rules, which aren't used anymore.
     /// - merged: Rule was merged from the referred rules. The rules may be still existing and in use.

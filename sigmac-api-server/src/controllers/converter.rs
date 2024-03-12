@@ -63,12 +63,23 @@ pub fn batch_convert(
 }
 
 fn batch_conversion(data: BatchData) -> Result<Vec<(String, String)>> {
-    data.sigma_rules.into_iter().map(conversion).collect()
+    let mut results = vec![];
+    for rule in data.sigma_rules.into_iter() {
+        match conversion(rule.clone()) {
+            Ok(result) => results.push(result),
+            Err(e) => {
+                let data = (rule.destination_type.clone(), format!("Could not convert this rule due to {:?}.", e));
+                results.push(data);
+            }
+        }
+    }
+    Ok(results)
 }
 
 fn conversion(data: Data) -> Result<(String, String)> {
+    let data = data.clone();
     let mappings = data.field_map.map(|map| load_as_field_mappings(&map));
-    from_sigma(
+    return match from_sigma(
         &data.sigma_rule_yml_content,
         &data.destination_type.to_lowercase(),
         mappings,
@@ -77,6 +88,15 @@ fn conversion(data: Data) -> Result<(String, String)> {
         data.replace_fields,
         data.keep_fields,
     )
-    .map(|x| (data.destination_type, x))
-    .map_err(|err| Error::BadRequest(err.to_string()))
+    .map(|x| (data.destination_type.clone(), x)){
+        Ok(x) => Ok(x),
+        Err(err) => {
+            match err{
+                sigma_convert::prelude::Error::SerdeError(err) => {
+                    Ok((data.destination_type.clone(), format!("Formatting Error: The rule is wrongly formatted at the following section: \n{}", err.to_string())))
+                },
+                _=> Err(Error::BadRequest(err.to_string()))
+            }
+        }
+    }
 }
