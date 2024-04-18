@@ -80,6 +80,8 @@ pub fn from_sigma(
 fn parse_sigma_rule(rule_content: &str) -> Result<SigmaRule> {
     // Some Cleanup
     // if rule_content.contains("- '{")
+    // NOTE: When there are conditions with wildcards get replaced with a " " characters
+    // and this breaks the condition builder later on, at least for sql.rs
     let rule_content = rule_content.replace(['\'', '*', '%'], "");
     let parsed_rule = match serde_yaml::from_str::<SigmaRule>(rule_content.as_str()) {
         Ok(parsed_rule) => parsed_rule,
