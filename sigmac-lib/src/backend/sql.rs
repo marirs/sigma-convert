@@ -159,6 +159,7 @@ impl QueryBuilder for SQLBackend {
                 SigmaDetectionCondition::Plain(cond) => match cond {
                     ConditionExpression::Any(pattern) => {
                         let pattern = pattern.replace('*', "");
+                        let pattern = pattern.replace(' ', "");
                         let matches: Vec<String> = condition_queries
                             .iter()
                             .filter(|x| x.0.contains(&pattern))
@@ -174,6 +175,7 @@ impl QueryBuilder for SQLBackend {
                     }
                     ConditionExpression::All(pattern) => {
                         let pattern = pattern.replace('*', "");
+                        let pattern = pattern.replace(' ', "");
                         let matches: Vec<String> = condition_queries
                             .iter()
                             .filter(|x| x.0.contains(pattern.trim()))
@@ -192,6 +194,7 @@ impl QueryBuilder for SQLBackend {
                         match cond_expr.as_ref() {
                             ConditionExpression::Any(pattern) => {
                                 let pattern = pattern.replace('*', "");
+                                let pattern = pattern.replace(' ', "");
                                 let matches: Vec<String> = condition_queries
                                     .iter()
                                     .filter(|x| x.0.contains(&pattern))
@@ -207,6 +210,7 @@ impl QueryBuilder for SQLBackend {
                             }
                             ConditionExpression::All(pattern) => {
                                 let pattern = pattern.replace('*', "");
+                                let pattern = pattern.replace(' ', "");
                                 let matches: Vec<String> = condition_queries
                                     .iter()
                                     .filter(|x| x.0.contains(&pattern))
@@ -229,6 +233,7 @@ impl QueryBuilder for SQLBackend {
                     match cond {
                         ConditionExpression::Any(pattern) => {
                             let pattern = pattern.replace('*', "");
+                            let pattern = pattern.replace(' ', "");
                             let matches: Vec<String> = condition_queries
                                 .iter()
                                 .filter(|x| x.0.contains(&pattern))
@@ -243,6 +248,7 @@ impl QueryBuilder for SQLBackend {
                         }
                         ConditionExpression::All(pattern) => {
                             let pattern = pattern.replace('*', "");
+                            let pattern = pattern.replace(' ', "");
                             let matches: Vec<String> = condition_queries
                                 .iter()
                                 .filter(|x| x.0.contains(&pattern))
@@ -260,6 +266,7 @@ impl QueryBuilder for SQLBackend {
                             match cond_expr.as_ref() {
                                 ConditionExpression::Any(pattern) => {
                                     let pattern = pattern.replace('*', "");
+                                    let pattern = pattern.replace(' ', "");
                                     let matches: Vec<String> = condition_queries
                                         .iter()
                                         .filter(|x| x.0.contains(&pattern))
@@ -275,6 +282,7 @@ impl QueryBuilder for SQLBackend {
                                 }
                                 ConditionExpression::All(pattern) => {
                                     let pattern = pattern.replace('*', "");
+                                    let pattern = pattern.replace(' ', "");
                                     let matches: Vec<String> = condition_queries
                                         .iter()
                                         .filter(|x| x.0.contains(&pattern))
@@ -298,6 +306,7 @@ impl QueryBuilder for SQLBackend {
                     match cond {
                         ConditionExpression::Any(pattern) => {
                             let pattern = pattern.replace('*', "");
+                            let pattern = pattern.replace(' ', "");
                             let matches: Vec<String> = condition_queries
                                 .iter()
                                 .filter(|x| x.0.contains(&pattern))
@@ -312,6 +321,7 @@ impl QueryBuilder for SQLBackend {
                         }
                         ConditionExpression::All(pattern) => {
                             let pattern = pattern.replace('*', "");
+                            let pattern = pattern.replace(' ', "");
                             let matches: Vec<String> = condition_queries
                                 .iter()
                                 .filter(|x| x.0.contains(&pattern))
@@ -329,6 +339,7 @@ impl QueryBuilder for SQLBackend {
                             match cond_expr.as_ref() {
                                 ConditionExpression::Any(pattern) => {
                                     let pattern = pattern.replace('*', "");
+                                    let pattern = pattern.replace(' ', "");
                                     let matches: Vec<String> = condition_queries
                                         .iter()
                                         .filter(|x| x.0.contains(&pattern))
@@ -344,6 +355,7 @@ impl QueryBuilder for SQLBackend {
                                 }
                                 ConditionExpression::All(pattern) => {
                                     let pattern = pattern.replace('*', "");
+                                    let pattern = pattern.replace(' ', "");
                                     let matches: Vec<String> = condition_queries
                                         .iter()
                                         .filter(|x| x.0.contains(&pattern))
