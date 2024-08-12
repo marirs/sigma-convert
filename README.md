@@ -7,7 +7,7 @@ so you can run an API Server to do conversions using Microservices.
 
 ### Test it
 Convertor: [https://www.sigmac.to](https://www.sigmac.to)  
-API Docs: [https://www.sigmac.to/docs](https://www.sigmac.to)
+API Docs: [https://www.sigmac.to/docs](https://www.sigmac.to/docs)
 
 ### Supported Conversions.
 The currently supported backends are:
